@@ -8,6 +8,7 @@ require('./db/db.js');
 
 // MIDDLEWARE
 app.use(express.urlencoded({extended: false}));
+app.use(express.static('public'));
 app.use(methodOverride('_method'));
 
 // CONTROLLERS
@@ -19,7 +20,7 @@ app.use('/user', userController);
 
 // ROUTES
 app.get('/', (req, res) => {
-    res.send('You made it');
+    res.render('index.ejs');
 });
 
 // LISTENER
