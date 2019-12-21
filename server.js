@@ -12,11 +12,12 @@ app.use(express.static('public'));
 app.use(methodOverride('_method'));
 
 // CONTROLLERS
+const userController = require('./controllers/user.js');
+app.use('/auth', userController);
+
 const todoController = require('./controllers/todo.js');
 app.use('/todo', todoController);
 
-const userController = require('./controllers/user.js');
-app.use('/user', userController);
 
 // ROUTES
 app.get('/', (req, res) => {

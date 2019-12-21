@@ -14,15 +14,17 @@ router.post('/signup', async (req, res) => {
 
     const userInformation =  {
         username: req.body.username,
-        password: passwordHash,
-        email: req.body.email
+        email: req.body.email,
+        password: passwordHash
     }
     
     try {
         const newUser = await User.create(userInformation);
-        req.session.username = newUser.username;
-        req.session.loggedIn = true;
-        res.redirect('/todo');
+        // req.session.username = newUser.username;
+        // req.session.loggedIn = true;
+        res.render('todo/todo.ejs', {
+            user: newUser
+        });
     } catch(err) {
         res.send(err);
     }
