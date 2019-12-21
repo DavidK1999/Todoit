@@ -3,10 +3,31 @@ const router = express.Router();
 const User = require('../models/user.js');
 const bcrypt = require('bcrypt');
 
-
-
 // SIGN IN ROUTE
+router.post('/signin', async (req, res) => {
+    try {
+        const foundUser = await User.findOne({username: req.body.username});
 
+        if(foundUser) {
+            if(bcrypt.compareSync(req.body.password, foundUser.password)) {
+                req.session.message = '';
+                req.session.username = foundUser.username;
+                req.session.loggedIn = true;
+
+                res.redirect('/todo/todo.ejs');
+            } else {
+                req.session.message = 'Username or password is incorrect';
+                res.redirect('/');
+            }
+        } else {
+            req.session.message = 'Username or password is incorrect';
+            res.redirect('/');
+        }
+    } catch(err) {
+        res.send(err);
+    }
+
+});
 
 // SIGN UP ROUTE
 router.post('/signup', async (req, res) => {
@@ -20,8 +41,8 @@ router.post('/signup', async (req, res) => {
     
     try {
         const newUser = await User.create(userInformation);
-        // req.session.username = newUser.username;
-        // req.session.loggedIn = true;
+        req.session.username = newUser.username;
+        req.session.loggedIn = true;
         res.render('todo/todo.ejs', {
             user: newUser
         });
@@ -30,11 +51,15 @@ router.post('/signup', async (req, res) => {
     }
 });
 
-
-
-
-
-
-
+// SIGNOUT ROUTE
+router.get('/signout', (req, res) => {
+    req.session.destroy((err) => {
+        if(err) {
+            res.send(err);
+        } else {
+            res.redirect('/');
+        }
+    })
+});
 
 module.exports = router;

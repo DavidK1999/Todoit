@@ -7,6 +7,12 @@ const port = 3000;
 require('./db/db.js');
 
 // MIDDLEWARE
+app.use(session({
+    secret: 'secretsarecool',
+    resave: false,
+    saveUninitialized: false
+}));
+
 app.use(express.urlencoded({extended: false}));
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
