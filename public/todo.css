@@ -1,27 +1,24 @@
-.wrapper {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr;
 }
 
-.sidebar {
-    width: 10%;
-    height: 100vh;
-    background-color: yellow;
-    position: absolute;
-    left: 0px;
+.left {
+    grid-column-start: 1;
+    justify-self: center;
 }
 
 .right {
-    position: relative;
-    background-color: aqua;
-    width: 100vw;
-    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-auto-rows: 1fr;
 }
 
-button {
-    position: absolute;
-    left: 5%;
-    top: 5%;
-    background-color: black;
+.addTodo {
+    grid-column-start: 1;
+}
+
+.todos {
+    grid-column-start: 2;
 }
