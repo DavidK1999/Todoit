@@ -1,0 +1,27 @@
+.wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 10%;
+    height: 100vh;
+    background-color: yellow;
+    position: absolute;
+    left: 0px;
+}
+
+.right {
+    position: relative;
+    background-color: aqua;
+    width: 100vw;
+    height: 100vh;
+}
+
+button {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    background-color: black;
+}

@@ -14,7 +14,7 @@ router.post('/signin', async (req, res) => {
                 req.session.username = foundUser.username;
                 req.session.loggedIn = true;
 
-                res.redirect('/todo/todo.ejs');
+                res.render('todo/todo.ejs');
             } else {
                 req.session.message = 'Username or password is incorrect';
                 res.redirect('/');
