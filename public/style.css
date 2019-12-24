@@ -22,7 +22,7 @@ main {
     justify-content: center;
 }
 
-form {
+.register {
     display: flex;
     justify-content: center;
     width: 45%;
@@ -34,7 +34,7 @@ fieldset {
     justify-content: center;
 }
 
-form button {
+.register button {
     margin: 10px auto;
 }
 

@@ -5,18 +5,20 @@ $(() => {
     const $todoDiv = $('.todos');
 
     $addTodoButton.on('click', () =>{
+        let date = new Date();
         const $todo = $(`
-            <form>
-                <div>
+            <form action="/todo" method="POST">
                 <input type="text" name="description" placeholder="Description">
-                </div>
-                <div>
-                <input type="text name="date" placeholder = "Date">
+                <div class="todoHandler">
+                    <button class="btn btn-primary btn-sm" type="submit">Add</button>
+                    <a href="#">Cancel</a>
                 </div>
             </form>
         `)
         $todoDiv.append($todo);
     });;
+
+
 
 
 });
