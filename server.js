@@ -22,7 +22,7 @@ const userController = require('./controllers/user.js');
 app.use('/auth', userController);
 
 const todoController = require('./controllers/todo.js');
-app.use('/todo', todoController);
+app.use('/todoit', todoController);
 
 
 // ROUTES

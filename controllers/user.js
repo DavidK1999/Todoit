@@ -14,7 +14,7 @@ router.post('/signin', async (req, res) => {
                 req.session.username = foundUser.username;
                 req.session.loggedIn = true;
 
-                res.render('todo/todo.ejs');
+                res.redirect('/todoit');
             } else {
                 req.session.message = 'Username or password is incorrect';
                 res.redirect('/');
@@ -43,9 +43,7 @@ router.post('/signup', async (req, res) => {
         const newUser = await User.create(userInformation);
         req.session.username = newUser.username;
         req.session.loggedIn = true;
-        res.render('todo/todo.ejs', {
-            user: newUser
-        });
+        res.redirect('/todoit');
     } catch(err) {
         res.send(err);
     }

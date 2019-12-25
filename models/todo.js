@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const todoSchema = mongoose.Schema({
     description: { type: String, required: true},
-    dateCreated: Date,
+    dateCreated: String,
     user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 });
 
