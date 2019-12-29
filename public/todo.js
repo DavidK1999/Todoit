@@ -7,7 +7,7 @@ $(() => {
     $addTodoButton.on('click', (e) =>{
         let date = new Date();
         const $todo = $(`
-            <form action="/todoit" method="POST">
+            <form  id="send" action="/todoit" method="POST">
                 <input type="text" name="description" placeholder="Description">
                 <input type="text" name="dateCreated" value=${date}>
                 <div class="todoHandler">
@@ -17,9 +17,10 @@ $(() => {
             </form>
         `)
         $todoDiv.append($todo);
-    });;
-
-
-
-
+    });
 });
+
+
+
+
+

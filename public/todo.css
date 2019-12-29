@@ -1,3 +1,25 @@
+header {
+    background-color: #DB4C3F;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+nav {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+
 .grid {
     display: grid;
     grid-template-columns: 3fr 4fr 2fr;
@@ -9,12 +31,12 @@
     flex-direction: column;
     align-items: center;
     grid-column-start: 1;
-    border-right: 1px solid red;
+    background-color: #FAFAFA;
+    height: 100vh;
 }
 
 .right {
-    
-    border: 1px solid black;
+    background-color: #FFFFFF;
 }
 
 .right-wrapper {
@@ -31,9 +53,10 @@
     justify-items: flex-start;
 }
 
-h4 {
+.right-wrapper h4 {
     align-self: flex-start;
     margin-left: 1%;
+    margin-top: 5%;
 }
 
 .todos {
