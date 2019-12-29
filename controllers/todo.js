@@ -4,12 +4,12 @@ const Todo = require('../models/todo.js');
 const User = require('../models/user.js');
 
 
-router.post('/', async (req, res) => {
+router.post('/:username', async (req, res) => {
     try {
         const found = await User.find({});
         console.log(found);
         await Todo.create(req.body);
-        res.redirect('/todoit');
+        res.redirect(`/todoit/${req.params.username}`);
     } catch(err) {
         res.send(err);
     }
@@ -18,6 +18,7 @@ router.post('/', async (req, res) => {
 router.get('/:username', async (req, res) => {
     try {
         const foundTodos = await Todo.find();
+        console.log(foundTodos);
 
         res.render('todo.ejs', {
             todos: foundTodos
