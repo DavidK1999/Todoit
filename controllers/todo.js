@@ -1,21 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const Todo = require('../models/todo.js');
-const User = require('../models/user.js');
 
 
-router.post('/:username', async (req, res) => {
+router.post('/:id', async (req, res) => {
     try {
-        const found = await User.find({});
-        console.log(found);
         await Todo.create(req.body);
-        res.redirect(`/todoit/${req.params.username}`);
+        res.redirect(`/todoit/${req.params.id}`);
     } catch(err) {
         res.send(err);
     }
 });
 
-router.get('/:username', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const foundTodos = await Todo.find();
         console.log(foundTodos);

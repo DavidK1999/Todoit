@@ -13,7 +13,8 @@ router.post('/signin', async (req, res) => {
                 req.session.message = '';
                 req.session.username = foundUser.username;
                 req.session.loggedIn = true;
-                res.redirect(`/todoit/${req.session.username}`);
+                console.log(foundUser);
+                res.redirect(`/todoit/${foundUser._id}`);
             } else {
                 req.session.message = 'Username or password is incorrect';
                 res.redirect('/');
