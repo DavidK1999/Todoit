@@ -16,9 +16,9 @@ router.get('/:id', async (req, res) => {
     try {
         const foundTodos = await Todo.find();
         console.log(foundTodos);
-
         res.render('todo.ejs', {
-            todos: foundTodos
+            todos: foundTodos,
+            id: req.params.id
         });
     } catch(err) {
         res.send(err);

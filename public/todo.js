@@ -12,7 +12,7 @@ $(() => {
         <form action="" method="POST">
         <input type="text" name="description" placeholder="Description">
         <input type="text" name="dateCreated" value=${date}>
-        <input type="text" name="user" value="${user}">
+        <input class="hidden" type="text" name="user" value="${user}">
                 <div class="todoHandler">
                     <button class="btn btn-primary btn-sm" type="submit">Add</button>
                     <a href="#">Cancel</a>

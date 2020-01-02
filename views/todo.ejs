@@ -32,6 +32,16 @@
                 </div>
                 <div class="todos">
                 </div>
+                
+                <%for(let key in todos) { %>
+                    <!-- <%= id %> -->
+                    <!-- <%= todos[key].user %> -->
+                    <% if(todos[key].user == id) { %>
+                        <%= todos[key].description %>
+                    <% } %>
+                <% } %>
+                    
+
             </div>
         </div>
     </div>
