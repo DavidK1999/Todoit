@@ -41,11 +41,12 @@
                                 <span class="date"><span><%=weekDays[new Date().getDay()]%></span><i class="far fa-calendar fa-stack-1x"></i></span>
                                 <strong class="fa-stack-1x">2</strong>
                             </span>
-                            <div class="toggle"><i class="fas fa-edit"></i></div>
-                            <form class="insane" action="?_method=DELETE" method="POST">
+                            <span class="toggle"><i class="fas fa-edit"></i></span>
+                            <span><form class="insane" action="?_method=DELETE" method="POST">
                                 <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
                                 <button type="submit"><i class="fas fa-trash"></i></button>
                             </form>
+                            </span>
                             <form class="hiddenForm" action="?_method=PUT" method="POST">
                                 <input type="text" name="description" value="<%=todos[key].description%>">
                                 <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">

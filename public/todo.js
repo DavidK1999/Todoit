@@ -34,16 +34,12 @@ $(() => {
         $(e.target).parent().toggleClass('edit').toggleClass('save');
         if($(e.target).parent().hasClass('save')) {
             $(e.target).parent().parent().find('.hiddenForm').toggleClass('hiddenForm').toggleClass('shownForm');
+            $(e.target).parent().parent().children('span').hide();
+            $(e.target).parent().parent().children('div').toggleClass('hide');
         } else {
             $toggle.html(`<i class="fas fa-edit"></i>`);
         }
     });
-
-
-
-
-
-
 });
 
 
