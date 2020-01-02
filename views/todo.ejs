@@ -47,8 +47,7 @@
                                 <button type="submit"><i class="fas fa-trash"></i></button>
                             </form>
                             <form class="hiddenForm" action="?_method=PUT" method="POST">
-                                <input type="text" name="description" placeholder="Description">
-                                <input type="text" name="dateCreated">
+                                <input type="text" name="description" value="<%=todos[key].description%>">
                                 <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
                                 <button type="submit"><i class="far fa-check-square"></i></button>
                             </form>
