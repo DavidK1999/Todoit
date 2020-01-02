@@ -29,9 +29,11 @@ $(() => {
     });
 
     $toggle.on('click', (e) => {
-        $toggle.toggleClass('edit').toggleClass('save');
-        if($toggle.hasClass('save')) {
-            $('.hiddenForm').toggleClass('hiddenForm').toggleClass('shownForm');
+        console.log($(e.target).parent());
+        console.log($(e.target));
+        $(e.target).parent().toggleClass('edit').toggleClass('save');
+        if($(e.target).parent().hasClass('save')) {
+            $(e.target).parent().parent().find('.hiddenForm').toggleClass('hiddenForm').toggleClass('shownForm');
         } else {
             $toggle.html(`<i class="fas fa-edit"></i>`);
         }
