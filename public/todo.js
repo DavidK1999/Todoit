@@ -1,11 +1,18 @@
+
+
+
 $(() => {
     const $addTodoButton = $('.addTodo');
+    const $toggle = $('.toggle');
+    const $description = $('.description');
+    const text = $description.text();
     const $todoDiv = $('.todos');
 
+    let path = window.location.pathname; 
+    let user = path.slice(8, path.length);
+    let date = new Date();
+
     $addTodoButton.on('click', (e) =>{
-        let path = window.location.pathname; 
-        let user = path.slice(8, path.length);
-        let date = new Date();
         
         const $todo = $(`
         <form action="" method="POST">
@@ -20,6 +27,21 @@ $(() => {
         `);
         $todoDiv.append($todo);
     });
+
+    $toggle.on('click', (e) => {
+        $toggle.toggleClass('edit').toggleClass('save');
+        if($toggle.hasClass('save')) {
+            $('.hiddenForm').toggleClass('hiddenForm').toggleClass('shownForm');
+        } else {
+            $toggle.html(`<i class="fas fa-edit"></i>`);
+        }
+    });
+
+
+
+
+
+
 });
 
 

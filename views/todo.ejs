@@ -24,7 +24,7 @@
         </div>
         <div class="right">
             <div class="right-wrapper">
-                <% const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']%>
+                <% const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']%>
                 <h4><%= weekDays[new Date().getDay()]%></h4>
                 <div class="addTodoDiv">
                     <i class="fas fa-plus"></i>
@@ -38,12 +38,19 @@
                         <div class="todo">
                             <div class="description"><%= todos[key].description %></div>
                             <span class="fa-stack">
-                            <span class="date"><i class="far fa-calendar fa-stack-2x"></i></span>
-                            <strong class="fa-stack-1x">2</strong>
+                                <span class="date"><span><%=weekDays[new Date().getDay()]%></span><i class="far fa-calendar fa-stack-1x"></i></span>
+                                <strong class="fa-stack-1x">2</strong>
                             </span>
+                            <div class="toggle"><i class="fas fa-edit"></i></div>
                             <form class="insane" action="?_method=DELETE" method="POST">
                                 <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
                                 <button type="submit"><i class="fas fa-trash"></i></button>
+                            </form>
+                            <form class="hiddenForm" action="?_method=PUT" method="POST">
+                                <input type="text" name="description" placeholder="Description">
+                                <input type="text" name="dateCreated">
+                                <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
+                                <button type="submit"><i class="far fa-check-square"></i></button>
                             </form>
                         </div>
                     <% } %>

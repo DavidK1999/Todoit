@@ -15,7 +15,6 @@ router.post('/:id', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const foundTodos = await Todo.find();
-        console.log(foundTodos);
         res.render('todo.ejs', {
             todos: foundTodos,
             id: req.params.id
@@ -25,9 +24,18 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+router.put('/:id', async (req, res) => {
+	try {
+        console.log(req.body);
+		await Todo.findByIdAndUpdate(req.body.id, req.body);
+        res.redirect(`/todoit/${req.params.id}`);
+	} catch (err) {
+		res.send(err);
+	}
+});
+
 router.delete('/:id', async (req, res) => {
 	try {
-        console.log(req.body.id)
         await Todo.findByIdAndRemove(req.body.id);
         res.redirect(`/todoit/${req.params.id}`);
 	} catch (err) {

@@ -65,7 +65,16 @@ nav a {
 
 .todo {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    border: 1px solid black;
 
+}
+
+.date {
+    display: flex;
+    justify-content: space-between;
 }
 
 i {
@@ -80,7 +89,14 @@ form {
 }
 
 .insane {
-    background-color: green;
+    margin: 0px;
+    padding: 0px;
+}
+
+.insane button {
+    background: transparent;
+    padding: 0px;
+    border: 0px;
 }
 
 input {
@@ -95,5 +111,17 @@ input {
 
 .hidden {
     display: none;
+}
+
+.show {
+    display: flex;
+}
+
+.hiddenForm {
+    display: none;
+}
+
+.shownForm {
+    display: flex;
 }
 
