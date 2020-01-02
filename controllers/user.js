@@ -43,7 +43,7 @@ router.post('/signup', async (req, res) => {
         const newUser = await User.create(userInformation);
         req.session.username = newUser.username;
         req.session.loggedIn = true;
-        res.redirect('/todoit');
+        res.redirect(`/todoit/${newUser._id}`);
     } catch(err) {
         res.send(err);
     }
