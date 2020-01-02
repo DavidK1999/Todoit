@@ -12,7 +12,7 @@
     <header>
         <nav>
             <h4>Todoit</h4>
-            <a href="/auth/signout">Signout</a>
+            <a href="/auth/signout"><i class="fas fa-sign-out-alt"></i></a>
         </nav>
     </header>
     <div class="grid">
@@ -27,7 +27,7 @@
                 <% const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']%>
                 <h4><%= weekDays[new Date().getDay()]%></h4>
                 <div class="addTodoDiv">
-                    <p>+</p>
+                    <i class="fas fa-plus"></i>
                     <button class="btn btn-primary addTodo">Add Todo</button>
                 </div>
                 <div class="todos">
@@ -37,8 +37,14 @@
                     <% if(todos[key].user == id) { %>
                         <div class="todo">
                             <div class="description"><%= todos[key].description %></div>
-                            <div class="date"><i class="far fa-calendar"></i></div>
-                            <div class="delete"><i class="fas fa-trash"></i></div>
+                            <span class="fa-stack">
+                            <span class="date"><i class="far fa-calendar fa-stack-2x"></i></span>
+                            <strong class="fa-stack-1x">2</strong>
+                            </span>
+                            <form class="insane" action="?_method=DELETE" method="POST">
+                                <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
+                                <button type="submit"><i class="fas fa-trash"></i></button>
+                            </form>
                         </div>
                     <% } %>
                 <% } %> 

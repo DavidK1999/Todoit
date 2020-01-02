@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
 const session = require('express-session');
+const bodyParser = require('body-parser');
 const port = 3000;
 require('./db/db.js');
 
@@ -12,8 +13,10 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.urlencoded({extended: false}));
+// app.use(express.urlencoded({extended: false}));
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 

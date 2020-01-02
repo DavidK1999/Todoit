@@ -79,6 +79,10 @@ form {
     margin-top: 5%;
 }
 
+.insane {
+    background-color: green;
+}
+
 input {
     width: 50%;
 }

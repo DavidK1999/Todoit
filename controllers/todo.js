@@ -25,6 +25,15 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+router.delete('/:id', async (req, res) => {
+	try {
+        console.log(req.body.id)
+        await Todo.findByIdAndRemove(req.body.id);
+        res.redirect(`/todoit/${req.params.id}`);
+	} catch (err) {
+		res.send(err);
+	}
+});
 
 
 
