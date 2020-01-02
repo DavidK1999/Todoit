@@ -63,6 +63,15 @@ nav a {
     grid-column-start: 2;
 }
 
+.todo {
+    display: flex;
+
+}
+
+i {
+    font-size: 1.5rem;
+}
+
 form {
     display: flex;
     flex-direction: row;

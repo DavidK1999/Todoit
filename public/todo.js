@@ -5,7 +5,6 @@ $(() => {
     $addTodoButton.on('click', (e) =>{
         let path = window.location.pathname; 
         let user = path.slice(8, path.length);
-        console.log(user);
         let date = new Date();
         
         const $todo = $(`

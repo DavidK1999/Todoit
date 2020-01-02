@@ -35,11 +35,14 @@
                 
                 <%for(let key in todos) { %> 
                     <% if(todos[key].user == id) { %>
-                        <%= todos[key].description %>
+                        <div class="todo">
+                            <div class="description"><%= todos[key].description %></div>
+                            <div class="date"><i class="far fa-calendar"></i></div>
+                            <div class="delete"><i class="fas fa-trash"></i></div>
+                        </div>
                     <% } %>
                 <% } %> 
                     
-
             </div>
         </div>
     </div>
