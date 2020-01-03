@@ -44,6 +44,7 @@ nav a {
 .left {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     grid-column-start: 1;
     background-color: #FAFAFA;
@@ -135,12 +136,7 @@ form {
     padding: 0px;
 }
 
-.insane button {
-    background: transparent;
-    padding: 0px;
-    border: 0px;
-    color: black;
-}
+
 
 input {
     width: 50%;
@@ -178,14 +174,45 @@ input {
 }
 
 .shownForm {
+    border: 5px solid red;
     display: flex;
     height: 30px;
     margin: 0px;
     width: 100%;
-    justify-content: space-between
+    justify-content: space-between;
+
 }
 
 .shownForm input {
     width: 100%;
 }
+
+.shownForm button {
+    padding: 0px;
+    margin: 0px;
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    color: black;
+}
+
+.dropdown button {
+    background-color: #DB4C3F;
+    border: none;
+    border-radius: 0px;
+}
+
+.dropdown-item button {
+    background-color: inherit;
+}
+
+.edit-input {
+    justify-self: flex-start;
+    border: none;
+}
+
+.dropdown-menu button {
+    background-color: inherit;
+}
+
 

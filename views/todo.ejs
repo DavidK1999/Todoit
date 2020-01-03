@@ -17,7 +17,7 @@
     </header>
     <div class="grid">
         <div class="left">
-            <h4>Settings</h4>
+            <h4>Completed</h4>
             <h4>Settings</h4>
             <h4>Settings</h4>
             <h4>Settings</h4>
@@ -38,7 +38,24 @@
                     <% if(todos[key].user == id) { %>
                         <div class="todo">
                             <div class="description"><%= todos[key].description %></div>
-                            <div class="menu">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <button class="dropdown-item toggle">Edit</button>
+                                  <a class="dropdown-item" href="#">Date Created</a>
+                                  <form class="dropdown-item insane" action="?_method=DELETE" method="POST">
+                                        <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
+                                        <button class="dropdown-item">Complete</button>
+                                  </form>
+                                </div>
+                                <form class="hiddenForm" action="?_method=PUT" method="POST">
+                                    <input type="text" name="description" value="<%=todos[key].description%>">
+                                    <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
+                                    <button type="submit"><i class="far fa-check-square"></i></button>
+                                </form>
+                              </div>
+
+                            <!-- <div class="menu">
                                 <span class="fa-stack">
                                     <span class="date"></span><i class="far fa-calendar fa-stack-1x"></i></span>
                                     <strong class="fa-stack-x"><%= todos[key].dateCreated%></strong>
@@ -50,11 +67,11 @@
                                 </form>
                                 </span>
                                 <form class="hiddenForm" action="?_method=PUT" method="POST">
-                                    <input type="text" name="description" value="<%=todos[key].description%>">
+                                    <input class="edit-input" type="text" name="description" value="<%=todos[key].description%>">
                                     <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
                                     <button type="submit"><i class="far fa-check-square"></i></button>
                                 </form>
-                            </div>
+                            </div> -->
                         </div>
                     <% } %>
                 <% } %> 
@@ -63,8 +80,10 @@
         </div>
     </div>
 
+    
 <script src="https://kit.fontawesome.com/8ba3d5cd30.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="/todo.js"></script>
 </body>
