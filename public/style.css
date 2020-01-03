@@ -4,6 +4,10 @@ body {
     overflow: hidden;
 }
 
+header {
+    background-color: #E44232;;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -11,6 +15,7 @@ nav {
     margin: 0 auto;
     height: 100px;
     width: 85%;
+    color: white;
 }
 
 main {
@@ -29,6 +34,15 @@ main {
     margin-bottom: 15%;
 }
 
+form {
+    display: flex;
+    align-items: center;
+    border: 5px solid #E44232;
+    height: 400px;
+    width: 400px;
+
+}
+
 fieldset {
     display: flex;
     justify-content: center;
@@ -36,5 +50,11 @@ fieldset {
 
 .register button {
     margin: 10px auto;
+}
+
+.btn {
+    background-color: #E44232;
+    border: none;
+    color: white;
 }
 

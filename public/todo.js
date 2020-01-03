@@ -12,16 +12,19 @@ $(() => {
     let user = path.slice(8, path.length);
     let date = new Date();
 
+    const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
     $addTodoButton.on('click', (e) =>{
         
         const $todo = $(`
-        <form action="" method="POST">
+        <form class ="todo-creator" action="" method="POST">
         <input type="text" name="description" placeholder="Description">
-        <input type="text" name="dateCreated" value=${date}>
+        <input type="text" name="dateCreated" value="${months[new Date().getMonth()]} ${new Date().getDay()}" readonly>
         <input class="hidden" type="text" name="user" value="${user}">
                 <div class="todoHandler">
-                    <button class="btn btn-primary btn-sm" type="submit">Add</button>
-                    <a href="#">Cancel</a>
+                    <button type="submit">Add</button>
+                    <button type="button"><a href="#">Cancel</a></button>
                 </div>
             </form>
         `);
@@ -39,6 +42,10 @@ $(() => {
         } else {
             $toggle.html(`<i class="fas fa-edit"></i>`);
         }
+    });
+
+    $('button').on('click', (e) => {
+        window.alert('Sup Buddy');
     });
 });
 

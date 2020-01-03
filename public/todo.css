@@ -7,6 +7,21 @@ header {
     color: white;
 }
 
+button {
+    background-color:  #DB4C3F;
+    color: white;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    background-color: #FAFAFA;
+}
+
 nav {
     width: 90%;
     display: flex;
@@ -44,13 +59,26 @@ nav a {
     width: 80%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .addTodoDiv {
-    width: 100%;
+    position: absolute;
+    top: 75px;
+    left: 2%;
+    width: 30%;
     display: flex;
     justify-items: flex-start;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.addTodoDiv button {
+    background-color: #DB4C3F;
+    border: none;
+    color: white;
 }
 
 .right-wrapper h4 {
@@ -60,6 +88,7 @@ nav a {
 }
 
 .todos {
+    margin-top: 15%;
     grid-column-start: 2;
 }
 
@@ -106,7 +135,20 @@ input {
 .todoHandler {
     display: flex;
     align-items: center;
-    margin-top: 0.5%;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.todoHandler button {
+    width: 50%;
+    text-align: center;
+    height: 30px;
+    border: 1px solid black;
+}
+
+.todo-creator {
+    display: flex;
+    align-items: center;
 }
 
 .hidden {
