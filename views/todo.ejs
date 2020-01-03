@@ -38,21 +38,23 @@
                     <% if(todos[key].user == id) { %>
                         <div class="todo">
                             <div class="description"><%= todos[key].description %></div>
-                            <span class="fa-stack">
-                                <span class="date"><span><%=weekDays[new Date().getDay()]%></span><i class="far fa-calendar fa-stack-1x"></i></span>
-                                <strong class="fa-stack-1x">2</strong>
-                            </span>
-                            <span class="toggle"><i class="fas fa-edit"></i></span>
-                            <span><form class="insane" action="?_method=DELETE" method="POST">
-                                <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
-                                <button type="submit"><i class="fas fa-trash"></i></button>
-                            </form>
-                            </span>
-                            <form class="hiddenForm" action="?_method=PUT" method="POST">
-                                <input type="text" name="description" value="<%=todos[key].description%>">
-                                <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
-                                <button type="submit"><i class="far fa-check-square"></i></button>
-                            </form>
+                            <div class="menu">
+                                <span class="fa-stack">
+                                    <span class="date"></span><i class="far fa-calendar fa-stack-1x"></i></span>
+                                    <strong class="fa-stack-x"><%= todos[key].dateCreated%></strong>
+                                </span>
+                                <span class="toggle"><i class="fas fa-edit"></i></span>
+                                <span><form class="insane" action="?_method=DELETE" method="POST">
+                                    <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
+                                    <button type="submit"><i class="fas fa-check"></i></button>
+                                </form>
+                                </span>
+                                <form class="hiddenForm" action="?_method=PUT" method="POST">
+                                    <input type="text" name="description" value="<%=todos[key].description%>">
+                                    <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
+                                    <button type="submit"><i class="far fa-check-square"></i></button>
+                                </form>
+                            </div>
                         </div>
                     <% } %>
                 <% } %> 

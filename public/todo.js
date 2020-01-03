@@ -38,14 +38,10 @@ $(() => {
         if($(e.target).parent().hasClass('save')) {
             $(e.target).parent().parent().find('.hiddenForm').toggleClass('hiddenForm').toggleClass('shownForm');
             $(e.target).parent().parent().children('span').hide();
-            $(e.target).parent().parent().children('div').toggleClass('hide');
+            $(e.target).parent().parent().children('strong').hide();
         } else {
-            $toggle.html(`<i class="fas fa-edit"></i>`);
+            $toggle.html(`<i class="fas fa-pencil-alt"></i>`);
         }
-    });
-
-    $('button').on('click', (e) => {
-        window.alert('Sup Buddy');
     });
 });
 

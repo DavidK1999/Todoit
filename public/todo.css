@@ -94,16 +94,29 @@ nav a {
 
 .todo {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     border: 1px solid black;
+    margin-top: 10%;
 
 }
 
 .date {
     display: flex;
     justify-content: space-between;
+}
+
+.description {
+    max-width: 60%;
+    margin-left: 2%;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
 }
 
 i {
@@ -126,6 +139,7 @@ form {
     background: transparent;
     padding: 0px;
     border: 0px;
+    color: black;
 }
 
 input {
@@ -165,5 +179,13 @@ input {
 
 .shownForm {
     display: flex;
+    height: 30px;
+    margin: 0px;
+    width: 100%;
+    justify-content: space-between
+}
+
+.shownForm input {
+    width: 100%;
 }
 

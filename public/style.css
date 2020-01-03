@@ -5,7 +5,26 @@ body {
 }
 
 header {
-    background-color: #E44232;;
+    background-color: #E44232;
+    height: 60px;
+}
+
+.modal-content {
+    border: 5px solid #E44232;
+}
+
+.modal-body {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-body p {
+    margin: 0px;
+}
+
+legend {
+    text-align: center;
 }
 
 nav {
@@ -13,7 +32,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    height: 100px;
+    height: 100%;
     width: 85%;
     color: white;
 }
@@ -28,19 +47,17 @@ main {
 }
 
 .register {
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     width: 45%;
-    margin-bottom: 15%;
 }
 
 form {
     display: flex;
     align-items: center;
-    border: 5px solid #E44232;
     height: 400px;
     width: 400px;
-
 }
 
 fieldset {
@@ -49,8 +66,11 @@ fieldset {
 }
 
 .register button {
-    margin: 10px auto;
+    margin: 0 auto;
+    margin-top: 20%;
 }
+
+
 
 .btn {
     background-color: #E44232;
