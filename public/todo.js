@@ -36,19 +36,30 @@ $(() => {
     });
 
     $('.toggle').on('click', (e) => {
+        $(e.target).toggleClass('save');
+        
         let localDescription = $(e.target).parent().parent().parent().find('.description');
         if($(e.target).text() === 'Save') {
             $(e.target).text('Edit');
             $('.todo').attr('action', '')
             localDescription.attr('readonly', true);
-
+            
         } else {
             $(e.target).text('Save');
             localDescription.attr('readonly', false);
-            $('.todo').attr('action', '?_method=PUT')
-            // $(e.target).attr('type', 'submit');
+            $(e.target).on('click', () => {
+                $('.todo').attr('action', '?_method=PUT');
+                $(e.target).attr('type', 'submit');
+            });
         }
+        
+        // $('.save').on('click', (e) => {
+        //     alert('Hello');
+        //     $('.save').attr('type', 'submit');
+        // });
     });
+    
+
 
     // $('.toggle').on('click', (e) => {
     //     if($(e.target).text() === "Save") {
