@@ -111,6 +111,7 @@ nav a {
 .description {
     max-width: 60%;
     margin-left: 2%;
+    border: none;
 }
 
 .menu {
@@ -180,7 +181,6 @@ input {
     margin: 0px;
     width: 100%;
     justify-content: space-between;
-
 }
 
 .shownForm input {

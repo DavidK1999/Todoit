@@ -36,8 +36,26 @@
                 
                 <%for(let key in todos) { %> 
                     <% if(todos[key].user == id) { %>
-                        <div class="todo">
-                            <div class="description"><%= todos[key].description %></div>
+                        <form class="todo" action="" method="POST">
+                            <input type="text" name="description"  value="<%=todos[key].description%>" class="description">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <button class="dropdown-item toggle" type="button">Edit</button>
+                                  <form class="dropdown-item insane" action="?_method=DELETE" method="POST">
+                                        <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
+                                        <button class="dropdown-item complete" type="submit">Complete</button>
+                                  </form>
+                                  <a class="dropdown-item" href="#">Date Created</a>
+                                </div>
+                        </form>
+
+
+
+
+
+                        <!-- <div class="todo">
+                            <input type="text" name="description" class="description" value="<%=todos[key].description%>" readonly>
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -53,7 +71,7 @@
                                     <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
                                     <button type="submit"><i class="far fa-check-square"></i></button>
                                 </form>
-                              </div>
+                              </div> -->
 
                             <!-- <div class="menu">
                                 <span class="fa-stack">
