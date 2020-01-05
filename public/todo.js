@@ -16,23 +16,24 @@ $(() => {
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
     $addTodoButton.on('click', (e) =>{
-        
         const $todo = $(`
         <form class ="todo-creator" action="" method="POST">
-        <input type="text" name="description" placeholder="Description">
-        <input type="text" name="dateCreated" value="${months[new Date().getMonth()]} ${new Date().getDay()}" readonly>
-        <input class="hidden" type="text" name="user" value="${user}">
-                <div class="todoHandler">
-                    <button type="submit">Add</button>
-                    <button type="button"><a href="#">Cancel</a></button>
-                </div>
-            </form>
+            <input type="text" name="description" placeholder="Description">
+            <input type="text" name="dateCreated" value="${months[new Date().getMonth()]} ${new Date().getDay()}" readonly>
+            <input class="hidden" type="text" name="user" value="${user}">
+                    <div class="todoHandler">
+                        <button type="submit">Add</button>
+                        <button type="button"><a href="#">Cancel</a></button>
+                    </div>
+        </form>
         `);
+        // console.log($todoDiv);
         $todoDiv.append($todo);
     });
 
     $('.complete').on('click', (e) => {
         $('.todo').attr('action', '?_method=DELETE');
+        $('.complete').attr('value', true);
     });
 
     $('.toggle').on('click', (e) => {

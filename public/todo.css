@@ -103,9 +103,24 @@ nav a {
 
 }
 
+.todoHolder {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
 .date {
     display: flex;
     justify-content: space-between;
+}
+
+.fa-calendar {
+    margin-left: 15%;
+}
+
+.date-dropdown {
+    display: flex;
+    align-items: center;
 }
 
 .description {

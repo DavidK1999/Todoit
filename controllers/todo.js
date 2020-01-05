@@ -19,6 +19,7 @@ router.get('/:id', async (req, res) => {
             todos: foundTodos,
             id: req.params.id
         });
+        console.log(foundTodos);
     } catch(err) {
         res.send(err);
     }

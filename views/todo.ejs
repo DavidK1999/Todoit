@@ -26,7 +26,7 @@
             <div class="right-wrapper">
                 <% const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']%>
                 <% const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']%>
-                <h4><%= weekDays[new Date().getDay()]%></h4>
+                <h4><%=months[new Date().getMonth()]%> <%=new Date().getDay()%></h4>
                 <div class="addTodoDiv">
                     <i class="fas fa-plus"></i>
                     <button class="btn addTodo">Add Todo</button>
@@ -36,61 +36,20 @@
                 
                 <%for(let key in todos) { %> 
                     <% if(todos[key].user == id) { %>
-                        <form class="todo" action="" method="POST">
-                            <input type="text" name="description" value="<%=todos[key].description%>" class="description">
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  <button class="dropdown-item toggle" type="button">Edit</button>
-                                  <form class="dropdown-item insane" action="?_method=DELETE" method="POST">
-                                        <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
+                            <form class="todo" action="" method="POST">
+                                <input type="text" name="description" value="<%=todos[key].description%>" class="description" readonly>
+                                <input type="text" name="dateCreated" value="<%=months[new Date().getMonth()]%>" class="hidden" readonly>
+                                <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
+                                <input class="hidden" type="checkbox" name="completed" value="false">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <button class="dropdown-item toggle" type="button">Edit</button>
                                         <button class="dropdown-item complete" type="submit">Complete</button>
-                                  </form>
-                                  <a class="dropdown-item" href="#">Date Created</a>
+                                        <a class="dropdown-item date-dropdown" href="#"><%=months[new Date().getMonth()]%> <%=new Date().getDay()%> <i class="far fa-calendar"></i></a>
+                                    </div>
                                 </div>
-                        </form>
-
-
-
-
-
-                        <!-- <div class="todo">
-                            <input type="text" name="description" class="description" value="<%=todos[key].description%>" readonly>
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  <button class="dropdown-item toggle">Edit</button>
-                                  <a class="dropdown-item" href="#">Date Created</a>
-                                  <form class="dropdown-item insane" action="?_method=DELETE" method="POST">
-                                        <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
-                                        <button class="dropdown-item">Complete</button>
-                                  </form>
-                                </div>
-                                <form class="hiddenForm" action="?_method=PUT" method="POST">
-                                    <input type="text" name="description" value="<%=todos[key].description%>">
-                                    <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
-                                    <button type="submit"><i class="far fa-check-square"></i></button>
-                                </form>
-                              </div> -->
-
-                            <!-- <div class="menu">
-                                <span class="fa-stack">
-                                    <span class="date"></span><i class="far fa-calendar fa-stack-1x"></i></span>
-                                    <strong class="fa-stack-x"><%= todos[key].dateCreated%></strong>
-                                </span>
-                                <span class="toggle"><i class="fas fa-edit"></i></span>
-                                <span><form class="insane" action="?_method=DELETE" method="POST">
-                                    <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
-                                    <button type="submit"><i class="fas fa-check"></i></button>
-                                </form>
-                                </span>
-                                <form class="hiddenForm" action="?_method=PUT" method="POST">
-                                    <input class="edit-input" type="text" name="description" value="<%=todos[key].description%>">
-                                    <input class="hidden" type="text" name="id" value="<%=todos[key]._id%>">
-                                    <button type="submit"><i class="far fa-check-square"></i></button>
-                                </form>
-                            </div> -->
-                        </div>
+                            </form>
                     <% } %>
                 <% } %> 
                     
