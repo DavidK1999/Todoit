@@ -21,6 +21,7 @@ $(() => {
             <input type="text" name="description" placeholder="Description">
             <input type="text" name="dateCreated" value="${months[new Date().getMonth()]} ${new Date().getDay()}" readonly>
             <input class="hidden" type="text" name="user" value="${user}">
+            <input class="hidden" type="text" name="completed" value="false">
                     <div class="todoHandler">
                         <button type="submit">Add</button>
                         <button type="button"><a href="#">Cancel</a></button>
