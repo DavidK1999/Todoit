@@ -38,6 +38,9 @@
                 <h5 class="modal-title" id="exampleModalLongTitle">Sign In</h5>
                 <form action="/auth/signin" method="POST" class="register">
                     <fieldset>
+                        <% if(message)  { %>
+                        <p class="list-group-item"><%= message %></p>
+                        <% } %> 
                         <legend>Credentials</legend>
                         <label>Username</label>
                         <input type="text" name="username">

@@ -151,13 +151,6 @@ form {
     margin-top: 5%;
 }
 
-.insane {
-    margin: 0px;
-    padding: 0px;
-}
-
-
-
 input {
     width: 50%;
 }
@@ -235,3 +228,63 @@ input {
 }
 
 
+@media(max-width: 500px) {
+    * {
+        font-size: 1.2rem;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .description {
+        width: 300px;
+        font-size: 1.0rem;
+    }
+
+    .left {
+        display: none;
+    }
+
+    .right-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .addTodoDiv {
+        width: 100%;
+        justify-content: flex-start;
+        margin-bottom: 15%;
+    }
+
+    .todo-creator {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 20%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .todoHandler {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .todo-creator button {
+        width: 100%;
+        height: 100%;
+    }
+
+    .fa-plus {
+        display: none;
+    }
+    .fa-plus::before {
+        display: none;
+    }
+
+    .todo {
+        margin-top: 15%;
+    }
+}

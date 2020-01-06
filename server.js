@@ -30,7 +30,11 @@ app.use('/todoit', todoController);
 
 // ROUTES
 app.get('/', (req, res) => {
-    res.render('index.ejs');
+    res.render('index.ejs', {
+    message: req.session.message,
+    logged: req.session.logged,
+    username: req.session.username
+    });
 });
 
 // LISTENER
