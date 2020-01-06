@@ -26,10 +26,11 @@
             <div class="right-wrapper">
                 <% const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']%>
                 <% const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']%>
-                <h4><%=months[new Date().getMonth()]%> <%=new Date().getDay()%></h4>
+                <h4><%=months[new Date().getMonth()]%> <%=new Date().getDate()%></h4>
                 <div class="addTodoDiv">
                     <i class="fas fa-plus"></i>
                     <button class="btn addTodo">Add Todo</button>
+                    <!-- <%=new Date().getDate()%> -->
                 </div>
                 <div class="todos">
                 </div>
@@ -46,7 +47,7 @@
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <button class="dropdown-item toggle" type="button">Edit</button>
                                         <button class="dropdown-item complete" type="submit">Complete</button>
-                                        <a class="dropdown-item date-dropdown" href="#"><%=months[new Date().getMonth()]%> <%=new Date().getDay()%> <i class="far fa-calendar"></i></a>
+                                        <a class="dropdown-item date-dropdown" href="#"><%=months[new Date().getMonth()]%> <%=new Date().getDate()%> <i class="far fa-calendar"></i></a>
                                     </div>
                                 </div>
                             </form>
