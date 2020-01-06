@@ -11,16 +11,24 @@
 <body>
     <header>
         <nav>
+            
             <h4>Todoit</h4>
-            <a href="/auth/signout"><i class="fas fa-sign-out-alt"></i></a>
+                <div class="dropdown">
+                        <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" ></i></button>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                            <button class="dropdown-item">Theme</button>
+                            <button class="dropdown-item"><a href="/auth/signout">Logout</a></button>
+                        </div>
+                </div> 
         </nav>
     </header>
     <div class="grid">
         <div class="left">
             <h4>Completed</h4>
-            <h4>Settings</h4>
-            <h4>Settings</h4>
-            <h4>Settings</h4>
+            <h4>Possible Feature</h4>
+            <h4>Possible Feature</h4>
+            <h4>Possible Feature</h4>
         </div>
         <div class="right">
             <div class="right-wrapper">
@@ -30,7 +38,6 @@
                 <div class="addTodoDiv">
                     <i class="fas fa-plus"></i>
                     <button class="btn addTodo">Add Todo</button>
-                    <!-- <%=new Date().getDate()%> -->
                 </div>
                 <div class="todos">
                 </div>

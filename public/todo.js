@@ -24,13 +24,18 @@ $(() => {
             <input class="hidden" type="text" name="completed" value="false">
                     <div class="todoHandler">
                         <button type="submit">Add</button>
-                        <button type="button"><a href="#">Cancel</a></button>
+                        <button class="cancel" type="button">Cancel</button>
                     </div>
         </form>
         `);
         // console.log($todoDiv);
         $todoDiv.append($todo);
+        
+        $('.cancel').on('click', (e) => {
+            console.log($(e.target).parent().parent().remove());
+        });
     });
+
 
     $('.complete').on('click', (e) => {
         $('.todo').attr('action', '?_method=DELETE');
