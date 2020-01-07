@@ -15,7 +15,7 @@
             
             <h4>Todoit</h4>
                 <div class="dropdown">
-                        <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" ></i></button>
+                        <button class="btn btn-danger" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog" ></i></button>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right slideInDown" aria-labelledby="dropdownMenuButton">
                             <button class="dropdown-item">Theme</button>
@@ -52,10 +52,10 @@
                                 <input class="hidden" type="checkbox" name="completed">
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <div class="dropdown-menu" aria-labelledby="dropdown-menu">
                                         <button class="dropdown-item toggle" type="button">Edit</button>
                                         <button class="dropdown-item complete" type="submit">Complete</button>
-                                        <a class="dropdown-item date-dropdown" href="#"><%=months[new Date().getMonth()]%> <%=new Date().getDate()%> <i class="far fa-calendar"></i></a>
+                                        <a class="dropdown-item date-dropdown" href="#"><%=todos[key].dateCreated %> <i class="far fa-calendar"></i></a>
                                     </div>
                                 </div>
                             </form>
