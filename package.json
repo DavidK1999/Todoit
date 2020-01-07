@@ -4,8 +4,8 @@
   "description": "Todolist application that utilizes authentication, RESTful routes, CRUD, and styling. Users will be able to log into their todo list to create, edit, and delete todos.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
