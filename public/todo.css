@@ -228,10 +228,41 @@ input {
 }
 
 
+
+@media(max-width: 1200px) {
+    * {
+        font-size: 1.4rem;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    
+    .left {
+        display: none;
+    }
+    
+    .addTodoDiv {
+        margin-top: 10%;
+    }
+    
+    .todoHandler {
+        height: 100%;
+    }
+    
+    .todo-creator button {
+        width: 100%;
+        height: 100%;
+    }
+}
+
 @media(max-width: 700px) {
     * {
         font-size: 1.2rem;
     }
+    
+
+    .drop
     .grid {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
@@ -291,32 +322,5 @@ input {
     .todo .dropdown-toggle {
         height: 100%;
         margin-top: -1%;
-    }
-}
-
-@media(max-width: 1200px) {
-    * {
-        font-size: 1.4rem;
-    }
-    .grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-    }
-
-    .left {
-        display: none;
-    }
-
-    .addTodoDiv {
-        margin-top: 10%;
-    }
-
-    .todoHandler {
-        height: 100%;
-    }
-
-    .todo-creator button {
-        width: 100%;
-        height: 100%;
     }
 }
