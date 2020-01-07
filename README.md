@@ -9,3 +9,6 @@ Simple layout of the application
 # Model Digram 
 Basic model diagram of the models involved
 ![Model](planning/diagram.pdf)
+
+# User Stories 
+https://trello.com/b/c0EVtO8h/todoit
