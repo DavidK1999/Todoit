@@ -5,6 +5,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const port = 3000;
+require('dotenv').config();
 require('./db/db.js');
 
 // MIDDLEWARE
